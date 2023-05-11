@@ -1,0 +1,20 @@
+version: "3"
+services:
+  monapp:
+    build: .
+    image: math-iso
+    depends_on:
+      - redis
+    ports:
+      - "82:82"
+    networks:
+      - ooredoo
+    environment:
+      - NOM=Ahmed CHOUCHEN
+  redis:
+    image: redis
+    networks:
+      - ooredoo
+
+networks:
+  ooredoo:
